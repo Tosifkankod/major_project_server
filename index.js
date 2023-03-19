@@ -10,7 +10,9 @@ import path from "path";
 import dotenv from 'dotenv'
 dotenv.config();
 
+
 const DATABASE_URL = process.env.REACT_APP_DATABASE_URL;
+const PORT = process.env.PORT || 6010;
 
 const app = express();
 
@@ -101,7 +103,7 @@ mongoose
     { useNewUrlParser: true }
   )
   .then(() => {
-    app.listen(5000, (error) => {
+    app.listen(PORT, (error) => {
       console.log("connected to data base port 5000");
     });
   }) 
