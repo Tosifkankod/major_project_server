@@ -14,7 +14,7 @@ console.log(savefilePath);
 export const postNoteData = async (req, res) => {
     const data = req.body;     
     const file = req.file.originalname;
-    data.Path = `${savefilePath}${data.Documentname}`;
+    data.Path = `/opt/render/project/src/Data/${data.Documentname}`;
 
 
     try {

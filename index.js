@@ -104,7 +104,7 @@ mongoose
   )
   .then(() => {
     app.listen(PORT, (error) => {
-      console.log("connected to data base port 5000");
+      console.log(`connected to data base port ${PORT}`);
     });
   }) 
   .catch((error) => {
