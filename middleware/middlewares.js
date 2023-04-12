@@ -5,7 +5,7 @@ import multer from 'multer';
 export const uploadSlider = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "/opt/render/project/src/Data/");
+      cb(null, "./Data");
     },
     filename: function (req, file, cb) {
       console.log(file);
