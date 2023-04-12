@@ -60,7 +60,7 @@ export const uploadPdfToS3 = async(req, res ) => {
     const file = req.file;
     const result = await uploadFile(file)
     res.json({key : `${result.key}`});
-    fs.unlinkSync(`${savefilePath}${result.key}`);
+    // fs.unlinkSync(`${savefilePath}${result.key}`);
 }
 
 
