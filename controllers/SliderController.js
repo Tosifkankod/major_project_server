@@ -21,8 +21,10 @@ export const getSliderData = async (req, res) => {
         // readStream.pipe(res);
         // res.send('hi')
 
-            let data = await SliderModel.find();
-            res.send(data);
+        console.log(savefilePath);
+        console.log('../Data');
+        let data = await SliderModel.find();
+        res.send(data);
 
     } catch (error) {
         console.log(error);
