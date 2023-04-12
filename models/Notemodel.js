@@ -13,7 +13,7 @@ const NoteSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    Path: {
+    Pdfkey: {
         type: String, 
         required: true
     },

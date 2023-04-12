@@ -12,7 +12,7 @@ dotenv.config();
 
 
 const DATABASE_URL = process.env.REACT_APP_DATABASE_URL;
-const PORT = process.env.PORT || 6010;
+const PORT = 6010;
 
 const app = express();
 
