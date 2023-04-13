@@ -24,10 +24,7 @@ const s3 = new S3({
 })
 // uploads a file to s3 
 export function uploadFile(file){
-    let path = `/opt/render/project/src/Data/${file.originalname}` 
-    console.log(file) 
-    const fileStream = fs.createReadStream(path);
-    console.log(path)
+    const fileStream = fs.createReadStream(`./Data/${file.originalname}`);
     const uploadParams = {
         Bucket:bucketName, 
         Body: fileStream, 
