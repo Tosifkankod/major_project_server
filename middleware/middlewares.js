@@ -5,7 +5,7 @@ import multer from 'multer';
 export const uploadSlider = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "../Data");
+      cb(null, "./Data");
     },
     filename: function (req, file, cb) {
       console.log(file);
@@ -35,6 +35,10 @@ export const uploadPdfFileS3 = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, "./Data");
+    },
+    filename: function (req, file, cb) {
+      console.log(file);
+      cb(null, file.originalname);
     },
   }),
 }).single("pdf");
