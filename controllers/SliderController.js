@@ -13,30 +13,21 @@ export const getSliderData = async (req, res) => {
     
     
     try {
-        // res.writeHead(200,{
-        //     'Content-Type':'jpg/jpeg',            
-        // })
-
-        // let readStream = fs.createReadStream(filepath);
-        // readStream.pipe(res);
-        // res.send('hi')
-
-        console.log(savefilePath);
-        console.log('../Data');
         let data = await SliderModel.find();
         res.send(data);
-
+        return;
     } catch (error) {
         console.log(error);
     }
 
 
-}
+} 
 
 
 export const postSliderData = async (req, res) => {
     try {
-        const destination = req.file.originalname;        
+        const destination = req.file.originalname; 
+        console.log(`${savefilePath}${destination}`);       
         const sliderimage = new SliderModel({
             image: fs.readFileSync(`${savefilePath}${destination}`, "base64")
         })
@@ -49,7 +40,7 @@ export const postSliderData = async (req, res) => {
         })
 
     } catch (error) {
-        
+        console.log(error)
     }
 }
 

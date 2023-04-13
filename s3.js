@@ -13,8 +13,7 @@ const region = process.env.AWS_BUCKET_REGION;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const savefilePath = path.join(__dirname, "../Data/");
-console.log(savefilePath);
+const savefilePath = path.join(__dirname, "./Data/");
 
 
 const s3 = new S3({
@@ -23,8 +22,11 @@ const s3 = new S3({
     secretAccessKey
 })
 // uploads a file to s3 
-export function uploadFile(file){
-    const fileStream = fs.createReadStream(`./Data/${file.originalname}`);
+export function uploadFile(file){ 
+    const destination = file.originalname;
+    
+    console.log(savefilePath);
+    const fileStream = fs.createReadStream(`${savefilePath}${destination}`);
     const uploadParams = {
         Bucket:bucketName, 
         Body: fileStream, 
