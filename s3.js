@@ -28,7 +28,7 @@ export function uploadFile(file){
     console.log(savefilePath);
     const fileStream = fs.createReadStream(`${savefilePath}${destination}`);
     const uploadParams = {
-        Bucket:bucketName, 
+        Bucket:"note-verse", 
         Body: fileStream, 
         Key: file.filename
     }
