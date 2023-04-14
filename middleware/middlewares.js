@@ -8,7 +8,7 @@ export const uploadSlider = multer({
       cb(null, "./Data");
     },
     filename: function (req, file, cb) {
-      console.log(file);
+      console.log("slider multer log", file);  
       cb(null, file.originalname);
     },
   }),
