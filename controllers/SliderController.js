@@ -27,7 +27,7 @@ export const getSliderData = async (req, res) => {
 export const postSliderData = async (req, res) => {
     try {
         const destination = req.file.originalname; 
-        console.log(`${savefilePath}${destination}`);       
+        console.log(req.file);      
         const sliderimage = new SliderModel({
             image: fs.readFileSync(`${savefilePath}${destination}`, "base64")
         })
