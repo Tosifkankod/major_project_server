@@ -58,9 +58,14 @@ export const getNoteData = async (req, res) => {
 // This below controller is for uploading pdf file to s3
 export const uploadPdfToS3 = async(req, res ) => {
     const file = req.file;
-    const result = await uploadFile(file);
-    res.json({key : `${result.key}`});
-    fs.unlinkSync(`${savefilePath}${result.key}`);
+    let result = "";
+    uploadFile(file).then((value) => {
+        result = value;
+        fs.unlinkSync(`${savefilePath}${result.key}`);
+        res.json({key : `${result.key}`});
+    }).catch((err) => {
+        console.log("s3 controller error", err);
+    })
 }
 
 
