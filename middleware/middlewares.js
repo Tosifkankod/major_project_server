@@ -27,7 +27,7 @@ export const uploadNoteData = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
       console.log(req);
-      cb(null, "./Data");
+      cb(null, savefilePath);
     },
     filename: function (req, file, cb) {
       console.log(file);
